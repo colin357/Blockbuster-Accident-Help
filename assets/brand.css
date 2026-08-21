@@ -1,0 +1,30 @@
+/* Blockbuster Injury brand overrides.
+   Loaded after the generated stylesheets so it wins on equal specificity. */
+
+:root {
+  --bbi-navy: #16264d;
+  --bbi-navy-deep: #0e1730;
+  --bbi-gold: #f7b91b;
+  --bbi-gold-deep: #c98d08;
+}
+
+/* The wordmark is a wide badge, so it needs more width than the old stacked mark. */
+.logo.header-logo { width: 132px; height: auto; }
+.footer_logo { max-width: 190px; }
+
+/* Primary CTAs are gold: white text on gold is unreadable, so set navy.
+   Button variants that declare their own colour (.is-white, .is-black,
+   .is-transparent, .secondary, .is-link) have higher specificity and still win. */
+.button { color: var(--bbi-navy); }
+.button:hover { background-color: var(--bbi-gold-deep); color: var(--bbi-navy); }
+
+/* Same problem wherever the old red was used as a fill behind white text. */
+.text-style-tagline.is-red { color: var(--bbi-navy); }
+.empty-state { color: var(--bbi-navy); }
+
+/* ...and where it was used as link text on a light background. */
+.privacy-policy_rich-text a { color: var(--bbi-navy); }
+.content27_link:hover { color: var(--bbi-navy); }
+
+/* The phone glyph is a white PNG; darken it so it reads on the gold button. */
+.button .call-icon { filter: brightness(0); }
