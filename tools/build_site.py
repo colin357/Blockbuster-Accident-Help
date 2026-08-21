@@ -12,6 +12,10 @@ for line in open(f'{SRC}/assetmap.txt'):
     assetmap[u] = n
 
 # old brand imagery -> new brand imagery
+# the big footer wordmark watermark was dropped from the design
+DROP = {f'699ff699926c49f12cbc9a90_Heading{v}.webp'
+        for v in ('', '-p-500', '-p-800', '-p-1080')}
+
 def outname(n):
     return LOGO_SWAP.get(n, n.replace('Accident_Report_Help', 'Blockbuster_Injury'))
 
@@ -58,7 +62,7 @@ def rebrand(t):
 # ---------- assets ----------
 os.makedirs(f'{OUT}/assets', exist_ok=True)
 for u, n in assetmap.items():
-    if n in LOGO_SWAP:            # replaced by new brand artwork
+    if n in LOGO_SWAP or n in DROP:   # replaced by new brand artwork, or dropped
         continue
     src = f'{SRC}/assets/{n}'
     if not os.path.exists(src):
@@ -85,6 +89,8 @@ def transform(t):
                '/assets/jquery-3.5.1.min.js', t)
     # 1b. the Webflow CDN is no longer used - drop its preconnect hint
     t = re.sub(r'<link\b(?=[^>]*(?:preconnect|dns-prefetch))(?=[^>]*website-files\.com)[^>]*>', '', t)
+    # 1b2. remove the footer wordmark watermark
+    t = re.sub(r'<img[^>]*class="footer_image"[^>]*/?>', '', t)
     # 1c. brand overrides load after every generated stylesheet
     t = t.replace('</head>', '<link href="/assets/brand.css" rel="stylesheet" type="text/css"/></head>', 1)
     # 2. drop SRI (stylesheets are modified locally)

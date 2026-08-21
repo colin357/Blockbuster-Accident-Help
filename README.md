@@ -29,15 +29,15 @@ assets/                     all CSS, JS, fonts and images (self-hosted)
 tools/build_site.py         the script that generated this from the source site
 ```
 
-74 pages, 343 assets. Everything is served from this repo — no Webflow CDN, no external
+74 pages, 339 assets. Everything is served from this repo — no Webflow CDN, no external
 stylesheets, no remote fonts.
 
 ## What changed from the source site
 
 **Name.** Every occurrence of "Accident Report Help" / "AccidentReportHelp" is now
-"Blockbuster Injury" / "BlockbusterInjury" — page copy, titles, meta descriptions, JSON-LD,
-alt text and the footer watermark image. Links and canonicals point at
-`blockbusterinjury.com`; the contact address is now `info@blockbusterinjury.com`.
+"Blockbuster Injury" / "BlockbusterInjury" — page copy, titles, meta descriptions, JSON-LD
+and alt text. Links and canonicals point at `blockbusterinjury.com`; the contact address is
+now `info@blockbusterinjury.com`.
 
 **Logo.** `assets/logo.svg` — the navy-and-gold badge, plus `assets/favicon.svg` (with
 `favicon.png` and `webclip.png` rendered from it). The wordmark is stored as outlined paths,
@@ -60,6 +60,9 @@ gold, taken from the logo:
 Colour tokens were substituted in place across the stylesheets, so spacing, type and layout
 are untouched. `assets/brand.css` loads last and carries the handful of adjustments the
 palette swap needed — mainly navy button text, because white on gold is unreadable.
+
+**Footer watermark removed.** The source site had a large faint wordmark image above the
+footer; it is dropped sitewide and its image files are gone.
 
 **Nothing else.** Copy, section order, images, animations and page structure are unchanged.
 
