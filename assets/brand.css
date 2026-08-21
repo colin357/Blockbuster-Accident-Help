@@ -8,8 +8,14 @@
   --bbi-gold-deep: #c98d08;
 }
 
-/* The wordmark is a wide badge, so it needs more width than the old stacked mark. */
-.logo.header-logo { width: 132px; height: auto; }
+/* The header slot caps the mark at 100px wide (~46px tall) - the same box the
+   source site used, so the navbar keeps its original height. The badge is wide
+   (~2.18:1), so it reads smaller here than a stacked mark would; raise both
+   values together to give it more presence (the navbar grows to match). */
+.brand { max-width: 100px; }
+.logo.header-logo { width: 100%; height: auto; }
+
+/* The footer has room for the full lockup. */
 .footer_logo { max-width: 190px; }
 
 /* Primary CTAs are gold: white text on gold is unreadable, so set navy.

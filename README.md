@@ -39,13 +39,18 @@ stylesheets, no remote fonts.
 and alt text. Links and canonicals point at `blockbusterinjury.com`; the contact address is
 now `info@blockbusterinjury.com`.
 
-**Logo.** `assets/logo.svg` — the navy-and-gold badge, plus `assets/favicon.svg` (with
-`favicon.png` and `webclip.png` rendered from it). The wordmark is stored as outlined paths,
-so it renders identically everywhere and needs no webfont.
+**Logo.** `assets/logo.svg` is the official badge. Its canvas carried ~35% empty padding,
+which left a gap in the navbar, so the root `viewBox` was tightened to the artwork bounds —
+framing only, the paths are untouched.
 
-> This logo is a **recreation** built to match the artwork supplied in the brief. If you have
-> the original file from your designer, drop it in over `assets/logo.svg` — nothing else
-> needs to change.
+The badge is wide (~2.18:1), so in the header slot it caps at 100px × 46px — the same box the
+source site used, which keeps the navbar at its original height. That makes the wordmark read
+small. To give it more presence, raise `.brand { max-width }` in `assets/brand.css`; the
+navbar grows to match.
+
+`assets/favicon.svg` (and the `favicon.png` / `webclip.png` rendered from it) is a square
+"BB" monogram in the same navy and gold — the wide badge doesn't reduce legibly to 32px.
+Replace it if you have a square mark.
 
 **Palette.** The source site is mint green (`#52db82`) with red CTAs. This one is navy and
 gold, taken from the logo:
