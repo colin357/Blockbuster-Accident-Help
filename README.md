@@ -69,6 +69,10 @@ palette swap needed — mainly navy button text, because white on gold is unread
 **Footer watermark removed.** The source site had a large faint wordmark image above the
 footer; it is dropped sitewide and its image files are gone.
 
+**Supporting firm.** The Lindner Law Group attribution is now **10x Law**, at
+30 N Gould St #10835, Sheridan, WY 82801 — in the footer, the contact block, and the terms
+page.
+
 **Nothing else.** Copy, section order, images, animations and page structure are unchanged.
 
 ## Before going live
@@ -78,9 +82,8 @@ footer; it is dropped sitewide and its image files are gone.
   in the *original* account until you swap the form ID.
 - **Analytics** — Google Tag Manager container `GTM-5KC8L6MN` is likewise the source site's.
   Swap it for the Blockbuster Injury container or traffic mixes into the old property.
-- **Phone number** — `+1 (888) 927-2641` was kept as-is, along with the Lindner Law Group
-  attribution and the Yardley, PA address. Change these if the new brand uses different
-  contact details.
+- **Phone number** — `+1 (888) 927-2641` was carried over from the source site unchanged.
+  Change it if the new brand uses a different number.
 - **`/search`** — Webflow's site search was a hosted feature and has no static equivalent.
   The page renders but returns no results; wire it to a search service or drop the page.
 - **Blog pagination** — the blog index uses Finsweet CMS Load, which fetches `/blogs?page=N`.
