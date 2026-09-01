@@ -7,8 +7,8 @@ Plain static HTML/CSS/JS. No build step, no dependencies.
 
 ## Running it
 
-Any static file server works. The pages use directory-index URLs (`/blogs/foo/index.html`
-served at `/blogs/foo`), which Vercel, Netlify, Cloudflare Pages, GitHub Pages and S3 all
+Any static file server works. The pages use directory-index URLs (`/cities/miami/index.html`
+served at `/cities/miami`), which Vercel, Netlify, Cloudflare Pages, GitHub Pages and S3 all
 handle out of the box.
 
 ```sh
@@ -19,17 +19,15 @@ python3 -m http.server 8000   # then open http://localhost:8000
 
 ```
 index.html                  home
-blogs/                      blog index + 33 posts
 cities/                     26 city landing pages
 location/                   7 state landing pages
-blog-categories/tips/       category page
 privacy-policy/  terms-and-conditions/  thank-you/  search/
 404.html  robots.txt  sitemap.xml
 assets/                     all CSS, JS, fonts and images (self-hosted)
 tools/build_site.py         the script that generated this from the source site
 ```
 
-74 pages, 339 assets. Everything is served from this repo — no Webflow CDN, no external
+39 pages, 174 assets. Everything is served from this repo — no Webflow CDN, no external
 stylesheets, no remote fonts.
 
 ## What changed from the source site
@@ -73,6 +71,11 @@ footer; it is dropped sitewide and its image files are gone.
 30 N Gould St #10835, Sheridan, WY 82801 — in the footer, the contact block, and the terms
 page.
 
+**Blog removed.** The blog index, its 33 posts and the `/blog-categories/tips` category page
+are gone, along with the "Blogs & Insights" navbar link and the footer "Resources" column that
+pointed at them. The 165 images and stylesheets used only by those pages were deleted too, and
+the sitemap now lists 39 URLs instead of 74.
+
 **Nothing else.** Copy, section order, images, animations and page structure are unchanged.
 
 ## Before going live
@@ -86,9 +89,6 @@ page.
   Change it if the new brand uses a different number.
 - **`/search`** — Webflow's site search was a hosted feature and has no static equivalent.
   The page renders but returns no results; wire it to a search service or drop the page.
-- **Blog pagination** — the blog index uses Finsweet CMS Load, which fetches `/blogs?page=N`.
-  All posts are pre-rendered and reachable from the index and sitemap, but the "load more"
-  control needs a static-friendly replacement if you want it working.
 
 ## Regenerating
 
