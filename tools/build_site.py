@@ -52,7 +52,7 @@ BRAND = [
     ('Accident&nbsp;Report&nbsp;Help', 'Blockbuster&nbsp;Injury'),
     ('AccidentReport Help',         'Blockbuster Injury'),
     # supporting law firm
-    ('Lindner Law Group', '10x Law'),
+    ('Lindner Law Group', 'Blockbuster Injury'),
     ('205 Floral Vale Blvd, Yardley, PA 19067', '30 N Gould St #10835, Sheridan, WY 82801'),
     # one post has the leading "a" outside the link: `such as a<a ...>ccident report help</a>`
     ('such as a<a href="/">ccident report help</a>', 'such as <a href="/">Blockbuster Injury</a>'),

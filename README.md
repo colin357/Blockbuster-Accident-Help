@@ -67,7 +67,7 @@ palette swap needed — mainly navy button text, because white on gold is unread
 **Footer watermark removed.** The source site had a large faint wordmark image above the
 footer; it is dropped sitewide and its image files are gone.
 
-**Supporting firm.** The Lindner Law Group attribution is now **10x Law**, at
+**Supporting firm.** The Lindner Law Group attribution is now **Blockbuster Injury**, at
 30 N Gould St #10835, Sheridan, WY 82801 — in the footer, the contact block, and the terms
 page.
 
